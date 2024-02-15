@@ -1,7 +1,19 @@
 <?php
 
-require_once("dbhandlers/dataBase.php");
-require_once('controllers/OperationsController.php');
+try {
+    require_once("../dbHandlers/dataBase.php");
+}catch (Exception $e){
+    echo 'Error dataBase not found';
+
+}
+
+try {
+    require_once("OperationsController.php");
+}
+catch (Exception $e){
+    echo 'Error operationController not found';
+}
+
 
 session_start();
 $settings = parse_ini_file('settings.ini');

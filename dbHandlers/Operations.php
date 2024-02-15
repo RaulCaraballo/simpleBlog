@@ -38,4 +38,10 @@ class Operations
         // Return result
         return $result;
     }
+
+    public function registerUser($email,$password){
+        $sql = '
+            INSERT INTO users(email, password) VALUES ($email,$password); 
+        ';
+    }
 }

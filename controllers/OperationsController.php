@@ -1,7 +1,7 @@
 <?php
 
 //imports
-require_once "dbhandlers/Operations.php";
+require_once "dbHandlers/Operations.php";
 
 class OperationsController
 {
@@ -27,5 +27,15 @@ class OperationsController
             // Handle the user found case here
         }
     return null;
+    }
+
+    public function registerUser($email, $password){
+
+        // Sanitize user input
+        $email = mysqli_real_escape_string($this->connection, $email);
+        $password = mysqli_real_escape_string($this->connection, $password);
+
+        $this->tableOperations->registerUser($email, $password);
+
     }
 }
