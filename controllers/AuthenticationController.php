@@ -3,7 +3,7 @@
 try {
     require_once("../dbHandlers/dataBase.php");
 }catch (Exception $e){
-    echo 'Error dataBase not found';
+    
 
 }
 
