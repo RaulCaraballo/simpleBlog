@@ -1,7 +1,7 @@
 <?php
 
 //imports
-require_once "dbHandlers/Operations.php";
+require_once("../dbHandlers/Operations.php");
 
 class OperationsController
 {

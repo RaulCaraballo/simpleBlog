@@ -16,7 +16,7 @@ catch (Exception $e){
 
 
 session_start();
-$settings = parse_ini_file('settings.ini');
+$settings = parse_ini_file('../settings/settings.ini');
 $server = $settings['server'];
 $username = $settings['username'];
 $password = $settings['password'];
@@ -40,7 +40,7 @@ try {
                             echo "login successful";
                         }else{
                             $_SESSION['userFound'] = false;
-                            header('Location: login.php');
+                            header('Location: ../views/login.php');
                         }
                     }catch (Exception $e){
                         echo "login Error";
