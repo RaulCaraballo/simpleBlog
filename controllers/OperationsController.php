@@ -16,26 +16,25 @@ class OperationsController
 
     public function checkUser($email, $password)
     {
-        // Sanitize user input
         $email = mysqli_real_escape_string($this->connection, $email);
         $password = mysqli_real_escape_string($this->connection, $password);
 
         $result = $this->tableOperations->checkUser($email, $password);
 
-        if ($result->num_rows > 0) {
-            return $result->fetch_assoc();
-            // Handle the user found case here
-        }
-    return null;
+        return ($result && $result->num_rows > 0) ? $result : false;
     }
 
-    public function registerUser($email, $password){
 
-        // Sanitize user input
+    public function registerUser($email, $password)
+    {
+
+        $this->tableOperations->createTable();
         $email = mysqli_real_escape_string($this->connection, $email);
         $password = mysqli_real_escape_string($this->connection, $password);
-
-        $this->tableOperations->registerUser($email, $password);
-
+        $userExist = $this->tableOperations->checkUser($email,$password);
+        if (!$userExist){
+            return false;
+        }
+        return $this->tableOperations->registerUser($email, $password);
     }
 }

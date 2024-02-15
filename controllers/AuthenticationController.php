@@ -35,14 +35,16 @@ try {
                     try {
                         $tableController = new OperationsController($connection);
                         $result = $tableController->checkUser($userEmail, $userPassword);
-                        if ($result !== null){
+                        if ($result !== false && $result !== null) {
+                            // User found, proceed with login
                             echo "login successful";
                         }else{
                             $_SESSION['userFound'] = false;
                             header('Location: ../views/login.php');
                         }
                     }catch (Exception $e){
-                        echo "login Error";
+                        $_SESSION['userFound'] = false;
+                        header('Location: ../views/login.php');
                     }
                 }
             } catch (Exception $e) {
