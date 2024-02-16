@@ -37,7 +37,7 @@ try {
                         $result = $tableController->checkUser($userEmail, $userPassword);
                         if ($result !== false && $result !== null) {
                             // User found, proceed with login
-                            echo "login successful";
+                            header('Location: ../views/index.php');
                         }else{
                             $_SESSION['userFound'] = false;
                             header('Location: ../views/login.php');

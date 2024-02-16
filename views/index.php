@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>simpleBlog</title>
+</head>
+<body>
+<div class="mainWrapper">
+    <header>
+        <div id="headerRow">
+            <div class="headerLeft">
+                <img src='/img/logo.png' alt="logoImg">
+            </div>
+            <div class="headerRight">
+                <ul>
+                    <li>HOME</li>
+                    <li>BLOG</li>
+                    <li>CONTACTS</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+</div>
+</body>
+</html>
+<?php
