@@ -13,7 +13,7 @@ class Operations
     {
         $sql = "CREATE TABLE IF NOT EXISTS Users (
             id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-            email VARCHAR(100),
+            email VARCHAR(100) UNIQUE,
             password VARCHAR(1000)
         )";
 
@@ -39,9 +39,16 @@ class Operations
         return $result;
     }
 
-    public function registerUser($email,$password){
-        $sql = '
-            INSERT INTO users(email, password) VALUES ($email,$password); 
-        ';
+    public function registerUser($email, $password)
+    {
+
+        $sql = "INSERT INTO Users (email, password) VALUES (?, ?)";
+        $stmt = mysqli_prepare($this->connection, $sql);
+
+        mysqli_stmt_bind_param($stmt, "ss", $email, $password);
+        mysqli_stmt_execute($stmt);
+
+        return mysqli_stmt_affected_rows($stmt) > 0;
     }
+
 }

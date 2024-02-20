@@ -3,8 +3,7 @@
 try {
     require_once("../dbHandlers/dataBase.php");
 }catch (Exception $e){
-    
-
+    echo 'Error message';
 }
 
 try {
@@ -36,14 +35,16 @@ try {
                     try {
                         $tableController = new OperationsController($connection);
                         $result = $tableController->checkUser($userEmail, $userPassword);
-                        if ($result !== null){
-                            echo "login successful";
+                        if ($result !== false && $result !== null) {
+                            // User found, proceed with login
+                            header('Location: ../views/index.php');
                         }else{
                             $_SESSION['userFound'] = false;
                             header('Location: ../views/login.php');
                         }
                     }catch (Exception $e){
-                        echo "login Error";
+                        $_SESSION['userFound'] = false;
+                        header('Location: ../views/login.php');
                     }
                 }
             } catch (Exception $e) {

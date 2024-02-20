@@ -1,0 +1,57 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body,html{
+    height: 100%;
+}
+body{
+    background-image: url('../img/login-backgroung.jpg');
+    color: white;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+#wrapper {
+    width: 100%;
+    height: 100vh; /* Set height to viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+#mainBox{
+    background-color: antiquewhite;
+    border-radius: 15px;
+    color: black;
+    width: 50%;
+}
+#content{
+    padding: 50px;
+    display: flex;
+    align-items: center; /* vertically center */
+    justify-content: space-evenly;
+}
+
+
+.element {
+    width: 50%;
+}
+.content {
+    text-align: center;
+}
+.container{
+    width: 30%;
+}
+#loginForm{
+    width: fit-content;
+}
+#mainForm{
+    width: fit-content;
+}
+
+#submitData{
+    width: 50px;
+    margin-top: 20px;
+}
