@@ -12,13 +12,14 @@
     <header>
         <div id="headerRow">
             <div class="headerLeft">
-                <img src='/img/logo.png' alt="logoImg">
+                <img src='../img/logo.png' alt="logoImg">
             </div>
             <div class="headerRight">
                 <ul>
+                    
                     <li>HOME</li>
                     <li>BLOG</li>
-                    <li>CONTACTS</li>
+                    <li>CONTACTOS</li>
                 </ul>
             </div>
         </div>
