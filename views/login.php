@@ -24,7 +24,7 @@ session_start();
         <div id="content">
             <div id="welcomeMsg" class="element left">
                 <h1>
-                    ¡Bienvenido!
+                    ¡BIENVENIDO JUGADOR!
                 </h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores dolore est eum eveniet
                     itaque perferendis porro quo sed sunt.</p>

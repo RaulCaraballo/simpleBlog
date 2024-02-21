@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family :'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
 body, html {
@@ -10,19 +11,22 @@ body, html {
 }
 body {
     background-image: url('../img/login-backgroung.jpg');
+
     background-color: #333; /* Cambiar el color de fondo */
     color: #fff; /* Cambiar el color del texto */
     display: flex;
     justify-content: center;
     align-items: center;
+    background-size: cover; /* La imagen se ajustará para cubrir todo el contenedor */
+    background-position: center;
 }
 
 #wrapper {
 
-    background-color: rgba(255, 255, 255, 0.1); /* Cambiar el color de fondo */
+    background-color: rgba(255, 255, 255, 0.2); /* Cambiar el color de fondo */
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Agregar sombra */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8); /* Agregar sombra */
 }
 
 #mainBox {
@@ -51,8 +55,10 @@ body {
 }
 
 h1 {
-    font-size: 26px;
+
     margin-bottom: 10px;
+    font-size: 23px;
+    
 }
 
 p {
@@ -64,7 +70,7 @@ p {
 label {
     display: block;
     margin-bottom: 10px;
-    font-size: 19px;
+    font-size: 18px;
 }
 
 input[type="email"],
@@ -95,6 +101,7 @@ input[type="submit"] {
 }
 
 a{
-    font-size: 18px;
-    color: aquamarine;
+    font-size: 16px;
+    color: orange;
+    
 }

@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,10 +22,10 @@
         <div class="nav right">
             <a href="#home" class="nav-link active"><span class="nav-link-span"><span class="u-nav">Home</span></span></a>
             <a href="#blogs" class="nav-link"><span class="nav-link-span"><span class="u-nav">Blogs</span></span></a>
-            <a href="#about" class="nav-link"><span class="nav-link-span"><span class="u-nav">About</span></span></a>
-            <a href="#contact" class="nav-link"><span class="nav-link-span"><span class="u-nav">Contact</span></span></a>
-            <a href="../views/login.php" class="nav-link"><span class="nav-link-span"><span class="u-nav">Log In</span></span></a>
-            <a href="../views/registration.php" class="nav-link"><span class="nav-link-span"><span class="u-nav">Sign Up</span></span></a>
+            <a href="#about" class="nav-link"><span class="nav-link-span"><span class="u-nav">Sobre nosotros</span></span></a>
+            <a href="#contact" class="nav-link"><span class="nav-link-span"><span class="u-nav">Contacto</span></span></a>
+            <a href="../views/login.php" class="nav-link"><span class="nav-link-span"><span class="u-nav">Iniciar sesión</span></span></a>
+            <a href="../views/registration.php" class="nav-link"><span class="nav-link-span"><span class="u-nav">Registrarse</span></span></a>
         </div>
     </nav>
 </header>
@@ -47,5 +47,4 @@
 </body>
 
 </html>
-=======
->>>>>>> 444994074e40bed83193ee605aee57e4bb4d9214
+
