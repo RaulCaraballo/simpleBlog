@@ -23,6 +23,8 @@
             <a href="#blogs" class="nav-link"><span class="nav-link-span"><span class="u-nav">Blogs</span></span></a>
             <a href="#about" class="nav-link"><span class="nav-link-span"><span class="u-nav">About</span></span></a>
             <a href="#contact" class="nav-link"><span class="nav-link-span"><span class="u-nav">Contact</span></span></a>
+            <a href="../views/login.php" class="nav-link"><span class="nav-link-span"><span class="u-nav">Log In</span></span></a>
+            <a href="../views/registration.php" class="nav-link"><span class="nav-link-span"><span class="u-nav">Sign Up</span></span></a>
         </div>
     </nav>
 </header>

@@ -24,11 +24,16 @@ class OperationsController
         return ($result && $result->num_rows > 0) ? $result : false;
     }
 
+    public function addPost($jsonString){
+        $jsonString = mysqli_real_escape_string($this->connection,$jsonString);
+
+        return $this->tableOperations->addPost($jsonString);
+    }
 
     public function registerUser($email, $password)
     {
 
-        $this->tableOperations->createTable();
+        $this->tableOperations->createUserTable();
         $email = mysqli_real_escape_string($this->connection, $email);
         $password = mysqli_real_escape_string($this->connection, $password);
         $userExist = $this->tableOperations->checkUser($email,$password);

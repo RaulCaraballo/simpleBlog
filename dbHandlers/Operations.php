@@ -9,7 +9,7 @@ class Operations
         $this->connection = $connection;
     }
 
-    public function createTable()
+    public function createUserTable()
     {
         $sql = "CREATE TABLE IF NOT EXISTS Users (
             id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -18,6 +18,26 @@ class Operations
         )";
 
         mysqli_query($this->connection, $sql);
+    }
+
+    public function createBlogTable()
+    {
+        $sql = "
+            CREATE TABLE IF NOT EXISTS blogPosts(
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            title VARCHAR(255) NOT NULL,
+            content TEXT NOT NULL,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )";
+
+        mysqli_query($this->connection,$sql);
+
+    }
+    public function addPost($jsonString)
+    {
+        $this->createBlogTable();
+        $sql = "INSERT INTO blog_posts (json_data) VALUES ('$jsonString')";
+        return $this->connection->query($sql) === TRUE;
     }
 
     public function checkUser($email, $password)
@@ -33,10 +53,8 @@ class Operations
         mysqli_stmt_execute($stmt);
 
         // Get result
-        $result = mysqli_stmt_get_result($stmt);
-
         // Return result
-        return $result;
+        return mysqli_stmt_get_result($stmt);
     }
 
     public function registerUser($email, $password)
