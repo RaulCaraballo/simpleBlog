@@ -24,7 +24,7 @@ session_start();
         <div id="content">
             <div id="welcomeMsg" class="element left">
                 <h1>
-                    Bienvenido!
+                    ¡Bienvenido!
                 </h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores dolore est eum eveniet
                     itaque perferendis porro quo sed sunt.</p>
@@ -32,13 +32,13 @@ session_start();
             <div id="loginForm" class="element right">
                 <form action="../controllers/AuthenticationController.php" method="post" id="mainForm">
                     <label for="login">
-                        email
+                        Correo electrónico
                         <br>
                         <input type="email" name="email" id="login" value="">
                     </label>
                     <br>
                     <label for="password">
-                        Password
+                        Contraseña
                         <br>
                         <input type="password" name="password" id="password" value="">
                     </label>
@@ -47,7 +47,7 @@ session_start();
                         <input type="submit" name="submit" value="Sign In" id="submitData">
                     </label>
                     <label for="register">
-                        <a href="registration.php">No tienes cuenta?!REGISTRATE YA!</a>
+                        <a href="registration.php">¿No tienes cuenta? ¡REGISTRATE YA CON UN CLICK!</a>
                     </label>
 
                     <?php if (!empty($errorLoginMessage)): ?>
