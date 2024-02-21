@@ -1,3 +1,4 @@
+// JavaScript
 let util = {
     mobileMenu() {
         $("#nav").toggleClass("nav-visible");
