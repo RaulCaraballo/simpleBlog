@@ -59,7 +59,6 @@ class Operations
 
     public function registerUser($email, $password)
     {
-
         $sql = "INSERT INTO Users (email, password) VALUES (?, ?)";
         $stmt = mysqli_prepare($this->connection, $sql);
 
