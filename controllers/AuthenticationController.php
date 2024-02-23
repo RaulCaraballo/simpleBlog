@@ -32,7 +32,7 @@ try {
                             // User found, proceed with login
                             $userData = $tableController->selectUser($userEmail, $userPassword); // return user id as expected
                             $_SESSION['userId'] = $userData['id'];
-                            header('Location: ../views/index.php');
+                            header('Location: ../views/index_logined.php');
 
                         } else {
                             $_SESSION['userFound'] = false;

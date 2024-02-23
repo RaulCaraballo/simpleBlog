@@ -40,7 +40,7 @@ try {
                     } catch (Exception $e) {
                         $_SESSION['userFound'] = false;
                     }
-                    header('Location: ../views/index.php');
+                    header('Location: ../views/index_unlogined.php');
                 }
             } catch (Exception $e) {
                 echo 'Input error';
