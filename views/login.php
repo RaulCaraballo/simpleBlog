@@ -49,7 +49,6 @@ session_start();
                     <label for="register">
                         <a href="registration.php">¿No tienes cuenta? ¡REGISTRATE YA CON UN CLICK!</a>
                     </label>
-
                     <?php if (!empty($errorLoginMessage)): ?>
                         <div class="errorMessage"><?= $errorLoginMessage ?></div>
                     <?php endif; ?>

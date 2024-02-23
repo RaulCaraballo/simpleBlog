@@ -1,18 +1,30 @@
-<!doctype html>
+<?php
+// Start the session (if not already started)
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION['userId'])){
+    $_SESSION["userLogin"] = false;
+    header('Location:login.php');
+}
+// Get the logged-in user's ID from the session
+$user_id = $_SESSION["userId"];
+?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>simpleBlog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Blog Post</title>
 </head>
 <body>
-<form action="" method="post">
-    title <input type="text" name="title">
-    content <input type="text" name="content">
-    <input type="submit" name="submit" value="">
+<h1>Add Blog Post</h1>
+<form action="../controllers/addPostController.php" method="post">
+    <label for="title">Title:</label><br>
+    <input type="text" id="title" name="title"><br>
+    <label for="content">Content:</label><br>
+    <textarea id="content" name="content" rows="5"></textarea><br>
+    <input type="submit" value="Submit">
 </form>
 </body>
 </html>
-<?php

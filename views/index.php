@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +20,7 @@
         </div>
         <div class="nav right">
             <a href="#home" class="nav-link active"><span class="nav-link-span"><span class="u-nav">Home</span></span></a>
-            <a href="#blogs" class="nav-link"><span class="nav-link-span"><span class="u-nav">Blogs</span></span></a>
+            <a href="addPost.php" class="nav-link"><span class="nav-link-span"><span class="u-nav">Blogs</span></span></a>
             <a href="#about" class="nav-link"><span class="nav-link-span"><span class="u-nav">Sobre nosotros</span></span></a>
             <a href="#contact" class="nav-link"><span class="nav-link-span"><span class="u-nav">Contacto</span></span></a>
             <a href="../views/login.php" class="nav-link"><span class="nav-link-span"><span class="u-nav">Iniciar sesión</span></span></a>

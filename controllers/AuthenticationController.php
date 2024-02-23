@@ -1,50 +1,48 @@
 <?php
-
+session_start();
 try {
     require_once("../dbHandlers/dataBase.php");
-}catch (Exception $e){
+} catch (Exception $e) {
     echo 'Error message';
 }
 
 try {
     require_once("OperationsController.php");
-}
-catch (Exception $e){
+} catch (Exception $e) {
     echo 'Error operationController not found';
 }
-
-
-session_start();
 $settings = parse_ini_file('../settings/settings.ini');
 $server = $settings['server'];
 $username = $settings['username'];
 $password = $settings['password'];
 $dbName = $settings['database'];
-
 try {
     $database = new dataBase($server, $username, $password, $dbName);
     $connection = $database->getConnection();
-
     try {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             try {
                 if (isset($_POST['email'], $_POST['password'])) {
                     $userEmail = $_POST['email'];
                     $userPassword = $_POST['password'];
-
                     try {
                         $tableController = new OperationsController($connection);
                         $result = $tableController->checkUser($userEmail, $userPassword);
                         if ($result !== false && $result !== null) {
                             // User found, proceed with login
+                            $userData = $tableController->selectUser($userEmail, $userPassword); // return user id as expected
+                            $_SESSION['userId'] = $userData['id'];
                             header('Location: ../views/index.php');
-                        }else{
+
+                        } else {
                             $_SESSION['userFound'] = false;
                             header('Location: ../views/login.php');
                         }
-                    }catch (Exception $e){
+                        exit();
+                    } catch (Exception $e) {
                         $_SESSION['userFound'] = false;
                         header('Location: ../views/login.php');
+                        exit();
                     }
                 }
             } catch (Exception $e) {
@@ -52,7 +50,7 @@ try {
                 exit();
             }
         }
-    }catch (RuntimeException $e){
+    } catch (RuntimeException $e) {
         echo "Not a POST method sended";  //Print's on a screen custom error message
     }
 } catch (Exception $e) {

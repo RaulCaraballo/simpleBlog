@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 try {
     require_once("../dbHandlers/dataBase.php");
 } catch (Exception $e) {
