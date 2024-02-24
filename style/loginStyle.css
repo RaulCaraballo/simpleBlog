@@ -41,11 +41,16 @@ body {
 #welcomeMsg {
     flex: 1; /* Ocupa el espacio disponible */
     padding-right: 20px; /* Añadir espacio a la derecha */
+    border-top-right-radius: 0%;
+    border-bottom-right-radius: 0%;
 }
 
 #loginForm {
     flex: 1; /* Ocupa el espacio disponible */
     padding-left: 20px; /* Añadir espacio a la izquierda */
+    border-top-left-radius: 0%;
+    border-bottom-left-radius: 0%;
+    
 }
 
 .element {
@@ -76,8 +81,7 @@ label {
 input[type="email"],
 input[type="password"],
 input[type="ciudad"],
-input[type="nombre"],
-input[type="userName"],
+input[type="username"],
 input[type="submit"] {
     width: 100%;
     padding: 10px;
