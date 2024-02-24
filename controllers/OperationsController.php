@@ -13,42 +13,42 @@ class OperationsController
         $this->tableOperations = new Operations($connection);
     }
 
-    public function checkUser($email, $password)
+    public function checkUser($email, $username)
     {
         $email = mysqli_real_escape_string($this->connection, $email);
-        $password = mysqli_real_escape_string($this->connection, $password);
+        $username = mysqli_real_escape_string($this->connection, $username);
 
-        $result = $this->tableOperations->checkUser($email, $password);
-
-        return ($result && $result->num_rows > 0) ? $result : false;
+        return $this->tableOperations->selectUser($email, $username);
     }
 
-    public function addPost($title, $content, $user_id){
+    public function addPost($title, $content, $username){
         $title = mysqli_real_escape_string($this->connection,$title);
         $content = mysqli_real_escape_string($this->connection,$content);
-        $user_id = mysqli_real_escape_string($this->connection,$user_id);
+        $username = mysqli_real_escape_string($this->connection,$username);
 
-        return $this->tableOperations->addPost($title,$content,$user_id);
+        $this->tableOperations->addPost($title,$content,$username);
     }
 
-    public function registerUser($email, $password)
+    public function registerUser($username,$city, $email, $password)
     {
 
         $this->tableOperations->createUserTable();
+        $username = mysqli_real_escape_string($this->connection,$username);
+        $city = mysqli_real_escape_string($this->connection,$city);
         $email = mysqli_real_escape_string($this->connection, $email);
         $password = mysqli_real_escape_string($this->connection, $password);
-        $userExist = $this->tableOperations->checkUser($email,$password);
+        $userExist = $this->tableOperations->checkUser($email,$username);
         if (!$userExist){
             return false;
         }
-        return $this->tableOperations->registerUser($email, $password);
+        return $this->tableOperations->registerUser($username,$city,$email, $password);
     }
-    public function selectUser($email, $password)
+    public function selectUser($email, $username)
     {
         $email = mysqli_real_escape_string($this->connection, $email);
-        $password = mysqli_real_escape_string($this->connection, $password);
+        $username = mysqli_real_escape_string($this->connection, $username);
 
-        $result = $this->tableOperations->selectUser($email, $password);
+        $result = $this->tableOperations->selectUser($email, $username);
 
         return isset($result) ? $result : false;
     }

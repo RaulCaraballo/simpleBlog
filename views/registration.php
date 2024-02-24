@@ -21,17 +21,11 @@
             </div>
             <div id="loginForm" class="element right">
                 <form action="../controllers/RegistrationController.php" method="post" id="mainForm">
-                
-                    <label for="nombre" name="nombre" id="nombre">
-                        Nombre
-                        <br>
-                        <input type="nombre" name="nombre" id="nombre" value="">
-                    </label>
                     <br>
-                    <label for="apellidos" name="apellidos" id="apellidos">
-                        Apellidos
+                    <label for="username" name="username" id="username">
+                        Nombre de usuario
                         <br>
-                        <input type="apellidos" name="apellidos" id="apellidos" value="">
+                        <input type="username" name="username" id="userName" value="">
                     </label>
                     <br>
                     <label for="ciudad" name="ciudad" id="ciudad">

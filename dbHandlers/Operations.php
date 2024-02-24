@@ -13,6 +13,8 @@ class Operations
     {
         $sql = "CREATE TABLE IF NOT EXISTS Users (
             id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+            username VARCHAR(50) NOT NULL,
+            city varchar(50),
             email VARCHAR(100) UNIQUE,
             password VARCHAR(1000)
         )";
@@ -28,7 +30,8 @@ class Operations
             title VARCHAR(255) NOT NULL,
             content TEXT NOT NULL,
             author VARCHAR(100),
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (author) REFERENCES Users(username)
         )";
 
         mysqli_query($this->connection,$sql);
@@ -54,7 +57,7 @@ class Operations
         }
 
     }
-    public function addPost($title, $content, $user_id)
+    public function addPost($title, $content, $username)
     {
         $this->createBlogTable();
         $sql = "INSERT INTO blog_posts (title, content, author) VALUES (?, ?, ?)";
@@ -64,7 +67,7 @@ class Operations
             die("Error preparing statement: " . $this->connection->error);
         }
 
-        $stmt->bind_param("ssi", $title, $content, $user_id);
+        $stmt->bind_param("sss", $title, $content, $username);
 
         if ($stmt->execute()) {
             echo "New blog post added successfully.";
@@ -74,14 +77,14 @@ class Operations
         $stmt->close();
     }
 
-    public function checkUser($email, $password)
+    public function checkUser($email, $username)
     {
         // Prepare SQL statement with placeholders
-        $sql = "SELECT email, password FROM Users WHERE email = ? AND password = ?";
+        $sql = "SELECT email, username FROM Users WHERE email = ? AND username = ?";
         $stmt = mysqli_prepare($this->connection, $sql);
 
         // Bind parameters
-        mysqli_stmt_bind_param($stmt, "ss", $email, $password);
+        mysqli_stmt_bind_param($stmt, "ss", $email, $username);
 
         // Execute query
         mysqli_stmt_execute($stmt);
@@ -90,13 +93,13 @@ class Operations
         // Return result
         return mysqli_stmt_get_result($stmt);
     }
-    public function selectUser($email, $password)
+    public function selectUser($email, $username)
     {
-        $sql = "SELECT id, email FROM Users WHERE email = ? AND password = ?";
+        $sql = "SELECT username, email FROM Users WHERE email = ? AND username = ?";
         $stmt = mysqli_prepare($this->connection, $sql);
 
         // Bind parameters
-        mysqli_stmt_bind_param($stmt, "ss", $email, $password);
+        mysqli_stmt_bind_param($stmt, "ss", $email, $username);
 
         // Execute query
         mysqli_stmt_execute($stmt);
@@ -111,12 +114,12 @@ class Operations
 
 
 
-    public function registerUser($email, $password)
+    public function registerUser($username,$city, $email, $password)
     {
-        $sql = "INSERT INTO Users (email, password) VALUES (?, ?)";
+        $sql = "INSERT INTO Users (username,city,email,password) VALUES (?, ?, ?, ?)";
         $stmt = mysqli_prepare($this->connection, $sql);
 
-        mysqli_stmt_bind_param($stmt, "ss", $email, $password);
+        mysqli_stmt_bind_param($stmt, "ssss", $username,$city, $email, $password);
         mysqli_stmt_execute($stmt);
 
         return mysqli_stmt_affected_rows($stmt) > 0;

@@ -77,7 +77,7 @@ input[type="email"],
 input[type="password"],
 input[type="ciudad"],
 input[type="nombre"],
-input[type="apellidos"],
+input[type="userName"],
 input[type="submit"] {
     width: 100%;
     padding: 10px;

@@ -36,11 +36,11 @@ try {
                     $author = $_SESSION['userId'];
                     try {
                         $tableController = new OperationsController($connection);
-                        $result = $tableController->addPost($title,$content,$author);
+                        $tableController->addPost($title,$content,$author);
                     } catch (Exception $e) {
                         $_SESSION['userFound'] = false;
                     }
-                    header('Location: ../views/index_unlogined.php');
+                    header('Location: ../views/index_logined.php');
                 }
             } catch (Exception $e) {
                 echo 'Input error';
