@@ -43,7 +43,10 @@ header {
   color: yellow;
   border-bottom: 2px solid yellow;
 }
-
+.iniciar:hover{
+  color: yellow;
+  border-bottom: 2px solid yellow;
+}
 /* Estilos específicos de la sección home */
 #home {
   padding: 50px;
