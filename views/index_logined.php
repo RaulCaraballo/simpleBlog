@@ -19,17 +19,17 @@
             </div>
             <div class="nav right">
                 <a href="#home" class="nav-link active"><span class="nav-link-span"><span class="u-nav">Home</span></span></a>
-                <a href="#blogs" class="nav-link"><span class="nav-link-span"><span class="u-nav">Blogs</span></span></a>
                 <a href="#about" class="nav-link"><span class="nav-link-span"><span class="u-nav">Sobre nosotros</span></span></a>
                 <a href="#contact" class="nav-link"><span class="nav-link-span"><span class="u-nav">Contacto</span></span></a>
-                <a href="../views/login.php" class="nav-link"><span class="nav-link-span"><span class="u-nav">Cerrar sesión</span></span></a>
-                <a href="../views/registration.php" class="nav-link"><span class="nav-link-span"><span class="u-nav">Registrarse</span></span></a>
+                <a href="../views/login.php" class="nav-link"><span class="nav-link-span"><span class="u-nav"><span class="cerrar">Cerrar sesión</span></span></span></a>
+                <a href="../views/registration.php" class="nav-link"><span class="nav-link-span"><span class="u-nav"><span class="registro">Registrarse</span></span></span></a>
             </div>
         </nav>
     </header>
     <main>
         <section id="home">
             <h2>Últimos Juegos</h2>
+            <hr class="separator">
             <div class="game-preview">
                 <img src="../img/imagen1.jpg" alt="Preview del juego 1" class="imagen1">
                 <h3>The Last Of Us Parte ||</h3>
@@ -50,17 +50,6 @@
                 <h3>Outer Wilds</h3>
                 <p>Descripción breve del juego 4...</p>
             </div>
-        </section>
-        <section id="blogs">
-            <h2>Artículos Recientes</h2>
-            <article>
-                <h3>Título del artículo 1</h3>
-                <p>Contenido del artículo 1...</p>
-            </article>
-            <article>
-                <h3>Título del artículo 2</h3>
-                <p>Contenido del artículo 2...</p>
-            </article>
         </section>
         <section id="about">
             <h2>Sobre Nosotros</h2>
