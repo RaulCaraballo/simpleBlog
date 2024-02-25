@@ -1,3 +1,7 @@
+<?php
+session_start();
+$username = $_SESSION['userId'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +26,7 @@
                 <a href="#about" class="nav-link"><span class="nav-link-span"><span class="u-nav">Sobre nosotros</span></span></a>
                 <a href="#contact" class="nav-link"><span class="nav-link-span"><span class="u-nav">Contacto</span></span></a>
                 <a href="../views/login.php" class="nav-link"><span class="nav-link-span"><span class="u-nav"><span class="cerrar">Cerrar sesión</span></span></span></a>
-                <a href="../views/registration.php" class="nav-link"><span class="nav-link-span"><span class="u-nav"><span class="registro">Registrarse</span></span></span></a>
+                <a href="#" class="nav-link"><span class="nav-link-span"><span class="u-nav"><span class="perfil"><?=$username ?></span></span></span></a>
             </div>
         </nav>
     </header>
