@@ -120,3 +120,53 @@ h2 {
   border: none; /* Eliminamos el borde por defecto */
   border-top: 1px solid #ccc; /* Añadimos un borde superior de color gris */
 }
+
+/* Estilos específicos para la sección de galería */
+#gallery {
+  padding: 35px;
+}
+#gallery img.imagen1,
+#gallery img.imagen2,
+#gallery img.imagen3,
+#gallery img.imagen4 {
+  max-width: 85px; /* Establece un ancho máximo más pequeño para las imágenes 1 y 2 */
+  height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
+}
+
+.gallery-container {
+  overflow: auto; /* Para permitir el desplazamiento horizontal cuando las imágenes no quepan */
+  white-space: nowrap; /* Para que las imágenes no se rompan en diferentes líneas */
+}
+
+.gallery-image {
+  display: inline-block; /* Para que las imágenes aparezcan una al lado de la otra */
+  vertical-align: top; /* Alinea las imágenes correctamente */
+}
+/* Estilos para los botones de navegación */
+.navigation {
+  margin-top: 50px;
+  text-align: center;
+}
+
+#prevBtn,
+#nextBtn {
+  background-color: #0f65bb;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 16px;
+  margin: 0 10px;
+  border-radius: 5px;
+}
+
+#prevBtn:hover,
+#nextBtn:hover {
+  background-color: #1977dd;
+  transform: translateY(-2px);
+}
+
+
+
+
