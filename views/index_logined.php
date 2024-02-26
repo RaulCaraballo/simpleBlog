@@ -11,8 +11,6 @@ $username = $_SESSION['userId'];
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../style/indexStyle.css">
     <title>SimpleBlog</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="../script/indexScript.js"></script>
 </head>
 
 <body>
@@ -55,6 +53,20 @@ $username = $_SESSION['userId'];
                 <p>Descripción breve del juego 4...</p>
             </div>
         </section>
+        <section id="gallery">
+            <div class="gallery-container">
+                <img src="../img/imagen1.jpg" alt="Preview del juego 1" class="gallery-image imagen1">
+                <img src="../img/imagen2.jpg" alt="Preview del juego 2" class="gallery-image imagen2">
+                <img src="../img/imagen3.jpg" alt="Preview del juego 3" class="gallery-image imagen3">
+                <img src="../img/imagen4.jpg" alt="Preview del juego 4" class="gallery-image imagen4" >
+            </div>
+            <div class="navigation">
+                <button id="prevBtn">Anterior</button>
+                <button id="nextBtn">Siguiente</button>
+            </div>
+        </section>
+
+
         <section id="about">
             <h2>Sobre Nosotros</h2>
             <p>Somos un equipo apasionado por los videojuegos...</p>
@@ -64,7 +76,9 @@ $username = $_SESSION['userId'];
             <p>Ponte en contacto con nosotros...</p>
         </section>
     </main>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Tu script personalizado -->
+    <script src="../script/script.js"></script>
 </body>
 
 </html>
