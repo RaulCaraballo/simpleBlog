@@ -11,10 +11,11 @@ class Operations
 
     public function createUserTable()
     {
-        $sql = "CREATE TABLE IF NOT EXISTS Users (
+        $sql = "
+            CREATE TABLE IF NOT EXISTS Users (
             id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
             username VARCHAR(50) NOT NULL,
-            city varchar(50),
+            city VARCHAR(50),
             email VARCHAR(100) UNIQUE,
             password VARCHAR(1000)
         )";
@@ -29,7 +30,7 @@ class Operations
             id INT AUTO_INCREMENT PRIMARY KEY,
             title VARCHAR(255) NOT NULL,
             content TEXT NOT NULL,
-            author VARCHAR(100),
+            author VARCHAR(50), -- Match the length with the Users.username length
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
             FOREIGN KEY (author) REFERENCES Users(username)
         )";
@@ -59,7 +60,6 @@ class Operations
     }
     public function addPost($title, $content, $username)
     {
-        $this->createBlogTable();
         $sql = "INSERT INTO blog_posts (title, content, author) VALUES (?, ?, ?)";
         $stmt = $this->connection->prepare($sql);
 
@@ -93,13 +93,13 @@ class Operations
         // Return result
         return mysqli_stmt_get_result($stmt);
     }
-    public function selectUser($email, $username)
+    public function selectUser($email, $password)
     {
-        $sql = "SELECT username, email FROM Users WHERE email = ? AND username = ?";
+        $sql = "SELECT username, email FROM Users WHERE email = ? AND $password = ?";
         $stmt = mysqli_prepare($this->connection, $sql);
 
         // Bind parameters
-        mysqli_stmt_bind_param($stmt, "ss", $email, $username);
+        mysqli_stmt_bind_param($stmt, "ss", $email, $password);
 
         // Execute query
         mysqli_stmt_execute($stmt);

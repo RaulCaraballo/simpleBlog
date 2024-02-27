@@ -20,7 +20,7 @@ $username = $_SESSION['userId'];
                 <a href="#home"><img src="../img/logo.png" class="logo" alt="Logo"></a>                
             </div>
             <div class="nav right">
-                <a href="#home" class="nav-link active"><span class="nav-link-span"><span class="u-nav">Home</span></span></a>
+                <a href="addPost.php" class="nav-link active"><span class="nav-link-span"><span class="u-nav">Home</span></span></a>
                 <a href="#about" class="nav-link"><span class="nav-link-span"><span class="u-nav">Sobre nosotros</span></span></a>
                 <a href="#contact" class="nav-link"><span class="nav-link-span"><span class="u-nav">Contacto</span></span></a>
                 <a href="../views/login.php" class="nav-link"><span class="nav-link-span"><span class="u-nav"><span class="cerrar">Cerrar sesión</span></span></span></a>

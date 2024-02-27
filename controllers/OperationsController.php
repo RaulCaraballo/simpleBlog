@@ -18,7 +18,7 @@ class OperationsController
         $email = mysqli_real_escape_string($this->connection, $email);
         $username = mysqli_real_escape_string($this->connection, $username);
 
-        return $this->tableOperations->selectUser($email, $username);
+        return $this->tableOperations->checkUser($email, $username);
     }
 
     public function addPost($title, $content, $username){
@@ -26,6 +26,7 @@ class OperationsController
         $content = mysqli_real_escape_string($this->connection,$content);
         $username = mysqli_real_escape_string($this->connection,$username);
 
+        $this->tableOperations->createBlogTable();
         $this->tableOperations->addPost($title,$content,$username);
     }
 
@@ -43,12 +44,12 @@ class OperationsController
         }
         return $this->tableOperations->registerUser($username,$city,$email, $password);
     }
-    public function selectUser($email, $username)
+    public function selectUser($email, $password)
     {
         $email = mysqli_real_escape_string($this->connection, $email);
-        $username = mysqli_real_escape_string($this->connection, $username);
+        $password = mysqli_real_escape_string($this->connection, $password);
 
-        $result = $this->tableOperations->selectUser($email, $username);
+        $result = $this->tableOperations->selectUser($email, $password);
 
         return isset($result) ? $result : false;
     }
