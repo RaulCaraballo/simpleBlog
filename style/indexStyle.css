@@ -7,10 +7,10 @@ body {
 }
 
 header {
-  background-color: #0f65bb; /* Cambiamos el color de fondo de la barra de navegación */
-  color: #fff;
+  background-color: #2c3e50; /* Cambiamos el color de fondo de la barra de navegación */
+  color: #000; /* Color del texto */
   padding: 10px 20px;
- 
+  font-family: 'Roboto', sans-serif; /* Formato de letra más llamativo */
 }
 
 #nav {
@@ -116,41 +116,70 @@ h2 {
 }
 
 .separator {
-  margin: 30px 0; /* Espaciado arriba y abajo de la línea */
+  margin: 30px 0px; /* Espaciado arriba y abajo de la línea */
   border: none; /* Eliminamos el borde por defecto */
   border-top: 1px solid #ccc; /* Añadimos un borde superior de color gris */
 }
 
 /* Estilos específicos para la sección de galería */
 #gallery {
-  padding: 35px;
+  padding: 50px;
+  
 }
 #gallery img.imagen1,
 #gallery img.imagen2,
 #gallery img.imagen3,
 #gallery img.imagen4 {
-  max-width: 85px; /* Establece un ancho máximo más pequeño para las imágenes 1 y 2 */
-  height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
+    max-width: 130px; /* Establece un ancho máximo más pequeño para las imágenes 1 y 2 */
+    height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
+    border: 2px solid transparent; /* Agrega un borde transparente alrededor de las imágenes */
+    transition: border-color 0.3s ease; /* Agrega una transición suave para el cambio de color de borde */
+}
+
+#gallery img.imagen1:hover,
+#gallery img.imagen2:hover,
+#gallery img.imagen3:hover,
+#gallery img.imagen4:hover {
+    transform: scale(1.1); /* Escala la imagen al 110% cuando se hace hover */
+    transition: transform 0.3s ease; /* Agrega una transición suave */
+    cursor: pointer; /* Cambia el cursor a un puntero al hacer hover */
+    opacity: 0.8; /* Reduce la opacidad de la imagen */
+    border-color: #ccc; /* Cambia el color del borde al hacer hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Agrega una sombra al hacer hover */
 }
 
 .gallery-container {
-  overflow: auto; /* Para permitir el desplazamiento horizontal cuando las imágenes no quepan */
-  white-space: nowrap; /* Para que las imágenes no se rompan en diferentes líneas */
+  overflow: auto;
+  white-space: nowrap;
+  display: flex; 
+  justify-content: center; /* Centramos horizontalmente las imágenes */
+  padding-right: 17px;
+  margin-bottom: 0px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
 }
-
-.gallery-image {
-  display: inline-block; /* Para que las imágenes aparezcan una al lado de la otra */
-  vertical-align: top; /* Alinea las imágenes correctamente */
+.gallery-container:hover{
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+.uno,
+.dos,
+.tres,
+.cuatro{
+  padding-top: 20px;
+padding-bottom: 20px;
 }
 /* Estilos para los botones de navegación */
 .navigation {
-  margin-top: 50px;
+  margin-top: 40px;
   text-align: center;
 }
 
 #prevBtn,
-#nextBtn {
-  background-color: #0f65bb;
+#nextBtn,
+.add {
+  background-color: #000;
   color: #fff;
   border: none;
   padding: 10px 20px;
