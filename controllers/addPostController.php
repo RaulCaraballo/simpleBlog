@@ -30,17 +30,38 @@ try {
     try {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             try {
-                if (isset($_POST['title'], $_POST['content'])) {
+                if (isset($_POST['title'], $_POST['content'], $_FILES['image'])) {
                     $title = $_POST["title"];
                     $content = $_POST["content"];
                     $author = $_SESSION['userId'];
-                    try {
-                        $tableController = new OperationsController($connection);
-                        $tableController->addPost($title,$content,$author);
-                    } catch (Exception $e) {
-                        $_SESSION['userFound'] = false;
+
+                    // File upload directory
+                    $targetDir = "../img/Posts/"; // Directory where you want to store uploaded images
+                    $fileName = basename($_FILES["image"]["name"]);
+                    $targetFilePath = $targetDir . $fileName;
+                    $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
+
+                    // Allow certain file formats
+                    $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
+                    if (in_array($fileType, $allowTypes, true)) {
+                        // Upload file to server
+                        if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFilePath)) {
+                            // Include database connection
+                            try {
+                                $tableController = new OperationsController($connection);
+                                $tableController->addPost($title, $content, $author, $fileName); // Pass the filename to the addPost method
+                            } catch (Exception $e) {
+                                $_SESSION['userFound'] = false;
+                            }
+                            header('Location: ../views/index_logined.php');
+                        } else {
+                            echo "Sorry, there was an error uploading your file.";
+                        }
+                    } else {
+                        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
                     }
-                    header('Location: ../views/index_logined.php');
+                } else {
+                    echo "Please fill all fields.";
                 }
             } catch (Exception $e) {
                 echo 'Input error';
@@ -53,16 +74,4 @@ try {
 } catch (Exception $e) {
     echo 'Error al conectarse a servidor';
 }
-
-
-//// Process the form submission
-//if ($_SERVER["REQUEST_METHOD"] === "POST") {
-//    // Retrieve form data
-//
-//
-//
-//
-//
-//    $mysqli->close();
-//}
 ?>

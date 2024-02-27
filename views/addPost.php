@@ -19,12 +19,15 @@ $user_id = $_SESSION["userId"];
 </head>
 <body>
 <h1>Add Blog Post</h1>
-<form action="../controllers/addPostController.php" method="post">
+<form action="../controllers/addPostController.php" method="post" enctype="multipart/form-data">
     <label for="title">Title:</label><br>
     <input type="text" id="title" name="title"><br>
     <label for="content">Content:</label><br>
     <textarea id="content" name="content" rows="5"></textarea><br>
+    <label for="image">Upload Image:</label><br>
+    <input type="file" id="image" name="image"><br> <!-- Input for image upload -->
     <input type="submit" value="Submit">
 </form>
+
 </body>
 </html>

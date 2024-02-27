@@ -15,7 +15,7 @@
 <header id="nav-wrapper">
     <nav id="nav">
         <div class="nav left">
-            <a href="#home"><img src="../img/logo.png" class="logo" alt="Logo"></a>
+            <a href="#home"><img src="../img/logo/logo.png" class="logo" alt="Logo"></a>
         </div>
         <div class="nav right">
             <a href="#home" class="nav-link active"><span class="nav-link-span"><span class="u-nav">Home</span></span></a>
@@ -32,10 +32,10 @@
             <h2>Galería de fotos</h2>
             <hr class="separator">
             <div class="gallery-container">
-                <a class="uno" href="#img1"><img src="../img/imagen1.jpg" alt="Preview del juego 1" class="gallery-image imagen1"></a>
-                <a class="dos" href="#img2"><img src="../img/imagen2.jpg" alt="Preview del juego 2" class="gallery-image imagen2"></a>
-                <a class="tres" href="#img3"><img src="../img/imagen3.jpg" alt="Preview del juego 3" class="gallery-image imagen3"></a>
-                <a class="cuatro" href="#img4"><img src="../img/imagen4.jpg" alt="Preview del juego 4" class="gallery-image imagen4"></a>
+                <a class="uno" href="#img1"><img src="../img/Posts/imagen1.jpg" alt="Preview del juego 1" class="gallery-image imagen1"></a>
+                <a class="dos" href="#img2"><img src="../img/Posts/imagen2.jpg" alt="Preview del juego 2" class="gallery-image imagen2"></a>
+                <a class="tres" href="#img3"><img src="../img/Posts/imagen3.jpg" alt="Preview del juego 3" class="gallery-image imagen3"></a>
+                <a class="cuatro" href="#img4"><img src="../img/Posts/imagen4.jpg" alt="Preview del juego 4" class="gallery-image imagen4"></a>
             </div>
             <div class="navigation">
                 <button id="prevBtn">Anterior</button>
@@ -46,22 +46,22 @@
             <h2>Últimos Juegos</h2>
             <hr class="separator">
             <div class="game-preview">
-                <img id="img1" src="../img/imagen1.jpg" alt="Preview del juego 1" class="imagen1">
+                <img id="img1" src="../img/Posts/imagen1.jpg" alt="Preview del juego 1" class="imagen1">
                 <h3>The Last Of Us Parte ||</h3>
                 <p>Descripción breve del juego 1...</p>
             </div>
             <div class="game-preview">
-                <img id="img2" src="../img/imagen2.jpg" alt="Preview del juego 2" class="imagen2">
+                <img id="img2" src="../img/Posts/imagen2.jpg" alt="Preview del juego 2" class="imagen2">
                 <h3>Spider-Man 2</h3>
                 <p>Descripción breve del juego 2...</p>
             </div>
             <div class="game-preview">
-                <img id="img3" src="../img/imagen3.jpg" alt="Preview del juego 3" class="imagen3">
+                <img id="img3" src="../img/Posts/imagen3.jpg" alt="Preview del juego 3" class="imagen3">
                 <h3>Hogwarts Legacy</h3>
                 <p>Descripción breve del juego 3...</p>
             </div>
             <div class="game-preview">
-                <img id="img4" src="../img/imagen4.jpg" alt="Preview del juego 4" class="imagen4">
+                <img id="img4" src="../img/Posts/imagen4.jpg" alt="Preview del juego 4" class="imagen4">
                 <h3>Outer Wilds</h3>
                 <p>Descripción breve del juego 4...</p>
             </div>

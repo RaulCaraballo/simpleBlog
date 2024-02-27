@@ -21,13 +21,38 @@ class OperationsController
         return $this->tableOperations->checkUser($email, $username);
     }
 
-    public function addPost($title, $content, $username){
+    public function addPost($fileName, $title, $content, $username){
+
         $title = mysqli_real_escape_string($this->connection,$title);
         $content = mysqli_real_escape_string($this->connection,$content);
         $username = mysqli_real_escape_string($this->connection,$username);
+        $fileName = mysqli_real_escape_string($this->connection,$fileName);
 
         $this->tableOperations->createBlogTable();
-        $this->tableOperations->addPost($title,$content,$username);
+        $this->tableOperations->addPost($fileName, $title,$content,$username);
+    }
+    public function getPost()
+    {
+        $this->tableOperations->createBlogTable();
+        $result = $this->tableOperations->getPost();
+
+        if (mysqli_num_rows($result) > 0) {
+            // Loop through each row of the result set
+            while ($row = mysqli_fetch_assoc($result)) {
+                // Output HTML for each game preview
+                echo '<div class="game-preview">';
+                echo '<img src="../img/Posts/' . $row["img"] . '" alt="Preview del juego" class="imagen1">';
+                echo '<h3>' . $row["title"] . '</h3>';
+                echo '<p>' . $row["content"] . '</p>';
+                echo '<p>' . $row["author"] . '</p>';
+                echo '<p>' . $row["created_at"] . '</p>';
+                echo '</div>';
+            }
+        }
+    }
+    public function fillBlogTable()
+    {
+        $this->tableOperations->fillBlogTable();
     }
 
     public function registerUser($username,$city, $email, $password)
