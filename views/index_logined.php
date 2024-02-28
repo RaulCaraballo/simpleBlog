@@ -88,7 +88,8 @@ if (isset($_SESSION['userId'])){
             // Set the flag indicating default records have been inserted
             $_SESSION['default_records_inserted'] = true;
         } catch (Exception $e) {
-            echo 'Error: ' . $e->getMessage();
+            header('Location:index_Error_Page.html');
+            //echo 'Error: ' . $e->getMessage();
         }
         ?>
     </section>
