@@ -33,7 +33,7 @@ class OperationsController
         $this->tableOperations->addPost($fileName, $title, $content, $username);
     }
 
-    public function getPost($username)
+    public  function getPost($username)
     {
         $this->tableOperations->createBlogTable();
         $result = $this->tableOperations->getPost();
@@ -47,7 +47,7 @@ class OperationsController
                 echo '<h3>' . $row["title"] . '</h3>';
 
                 // Convert full description to short description
-                $shortDescription = $this->truncateString($row["content"], 100); // Adjust the length as needed
+                $shortDescription = $this->truncateString($row["content"]); // Adjust the length as needed
 
                 // Display short description
                 echo '<p class="short-description">' . $shortDescription . '</p>';
@@ -77,10 +77,10 @@ class OperationsController
     }
 
 // Function to truncate a string to a specific length
-    private function truncateString($string, $maxLength)
+    private function truncateString($string)
     {
-        if (strlen($string) > $maxLength) {
-            $string = substr($string, 0, $maxLength);
+        if (strlen($string) > 100) {
+            $string = substr($string, 0, 100);
             $string = rtrim($string); // Remove any trailing spaces
             $string .= '...'; // Add ellipsis to indicate truncation
         }

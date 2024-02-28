@@ -106,9 +106,11 @@ if (isset($_SESSION['userId'])){
     $(document).ready(function() {
         $('.toggle-description-btn').click(function() {
             $(this).siblings('.full-description').slideToggle();
+            $(this).siblings('.short-description').slideToggle();
         });
     });
 </script>
+
 </body>
 
 </html>
