@@ -1,6 +1,10 @@
 <?php
 session_start();
-$username = $_SESSION['userId'];
+if (isset($_SESSION['userId'])){
+    $username = $_SESSION['userId'];
+}else{
+    $username = null;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -60,58 +64,33 @@ $username = $_SESSION['userId'];
         <h2>Últimos Juegos</h2>
         <hr class="separator">
         <?php
-        if (!isset($_SESSION['default_records_inserted'])) {
-            require_once("../controllers/OperationsController.php");
-            require_once("../dbHandlers/dataBase.php");
 
-            // Database connection settings
-            $settings = parse_ini_file('../settings/settings.ini');
-            $server = $settings['server'];
-            $dbUsername = $settings['username'];
-            $dbPassword = $settings['password'];
-            $dbName = $settings['database'];
+        require_once("../controllers/OperationsController.php");
+        require_once("../dbHandlers/dataBase.php");
 
-            try {
-                // Create a new database connection
-                $database = new dataBase($server, $dbUsername, $dbPassword, $dbName);
-                $connection = $database->getConnection();
+        // Database connection settings
+        $settings = parse_ini_file('../settings/settings.ini');
+        $server = $settings['server'];
+        $dbUsername = $settings['username'];
+        $dbPassword = $settings['password'];
+        $dbName = $settings['database'];
 
-                // Create an instance of OperationsController
-                $operationsController = new OperationsController($connection);
+        try {
+            // Create a new database connection
+            $database = new dataBase($server, $dbUsername, $dbPassword, $dbName);
+            $connection = $database->getConnection();
 
-                // Get posts
-                $operationsController->getPost();
+            // Create an instance of OperationsController
+            $operationsController = new OperationsController($connection);
 
-                // Fill the blog table with default records
-                $operationsController->fillBlogTable();
-
-                // Set the flag indicating default records have been inserted
-                $_SESSION['default_records_inserted'] = true;
-            } catch (Exception $e) {
-                echo 'Error: ' . $e->getMessage();
-            }
+            // Get posts
+            $operationsController->getPost($username);
+            // Set the flag indicating default records have been inserted
+            $_SESSION['default_records_inserted'] = true;
+        } catch (Exception $e) {
+            echo 'Error: ' . $e->getMessage();
         }
         ?>
-        <!--            <div class="game-preview">-->
-        <!--                <img id="img1" src="../img/Posts/imagen1.jpg" alt="Preview del juego 1" class="imagen1">-->
-        <!--                <h3>The Last Of Us Parte ||</h3>-->
-        <!--                <p>Descripción breve del juego 1...</p>-->
-        <!--            </div>-->
-        <!--            <div class="game-preview">-->
-        <!--                <img id="img2" src="../img/Posts/imagen2.jpg" alt="Preview del juego 2" class="imagen2">-->
-        <!--                <h3>Spider-Man 2</h3>-->
-        <!--                <p>Descripción breve del juego 2...</p>-->
-        <!--            </div>-->
-        <!--            <div class="game-preview">-->
-        <!--                <img id="img3" src="../img/Posts/imagen3.jpg" alt="Preview del juego 3" class="imagen3">-->
-        <!--                <h3>Hogwarts Legacy</h3>-->
-        <!--                <p>Descripción breve del juego 3...</p>-->
-        <!--            </div>-->
-        <!--            <div class="game-preview">-->
-        <!--                <img id="img4" src="../img/Posts/imagen4.jpg" alt="Preview del juego 4" class="imagen4">-->
-        <!--                <h3>Outer Wilds</h3>-->
-        <!--                <p>Descripción breve del juego 4...</p>-->
-        <!--            </div>-->
     </section>
     <section id="about">
         <h2>Sobre Nosotros</h2>
@@ -123,8 +102,13 @@ $username = $_SESSION['userId'];
     </section>
 </main>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<!-- Tu script personalizado -->
-<script src="../script/script.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.toggle-description-btn').click(function() {
+            $(this).siblings('.full-description').slideToggle();
+        });
+    });
+</script>
 </body>
 
 </html>

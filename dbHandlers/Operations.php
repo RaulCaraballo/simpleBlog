@@ -61,7 +61,7 @@ class Operations
     public function getPost()
     {
         // Select blog posts from the database
-        $sql = "SELECT img, title, content, author,created_at FROM blog_posts";
+        $sql = "SELECT id, img, title, content, author,created_at FROM blog_posts";
         return mysqli_query($this->connection, $sql);
 
     }
@@ -82,6 +82,15 @@ class Operations
         } else {
             echo "Error: " . $this->connection->error;
         }
+        $stmt->close();
+    }
+    public function deletePost($postId){
+        $sql = "DELETE FROM blog_posts WHERE id = ?";
+
+        $stmt = $this->connection->prepare($sql);
+        $stmt->bind_param('i', $postId);
+
+        $stmt->execute();
         $stmt->close();
     }
 
