@@ -15,6 +15,8 @@ if (isset($_SESSION['userId'])){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../style/indexStyle.css">
     <title>SimpleBlog</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../script/script.js"></script>
 </head>
 
 <body>
@@ -24,7 +26,7 @@ if (isset($_SESSION['userId'])){
             <a href="#home"><img src="../img/logo/logo.png" class="logo" alt="Logo"></a>
         </div>
         <div class="nav right">
-            <a href="#gallery" class="nav-link active"><span class="nav-link-span"><span
+            <a href="#gallery" class="nav-link active"><span class="nav-link-span"><span 
                             class="u-nav">Galería de fotos</span></span></a>
             <a href="#about" class="nav-link"><span class="nav-link-span"><span
                             class="u-nav">Sobre nosotros</span></span></a>

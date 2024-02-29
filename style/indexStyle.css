@@ -211,7 +211,8 @@ padding-bottom: 20px;
 }
 
 #prevBtn:hover,
-#nextBtn:hover {
+#nextBtn:hover, 
+.add:hover{
   background-color: #1977dd;
   transform: translateY(-2px);
 }
