@@ -26,8 +26,8 @@ session_start();
                 <h1>
                     ¡BIENVENIDO JUGADOR!
                 </h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores dolore est eum eveniet
-                    itaque perferendis porro quo sed sunt.</p>
+                <p>Sé bien recibido a nuestra página de blogs sobre videojuegos. Aquí encontrarás las últimas noticias, reseñas y análisis de los juegos más populares del momento. </p>
+                <p>¡Recuerda que también puedes añadir tu post!</p>
             </div>
             <div id="loginForm" class="element right">
                 <form action="../controllers/AuthenticationController.php" method="post" id="mainForm">
