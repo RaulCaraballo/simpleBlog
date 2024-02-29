@@ -1,13 +1,15 @@
 /* Estilos generales */
 body {
-    font-family: 'Arial', sans-serif;
+  font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f8f8;
+    
   }
   
   header {
-    background-color: #2c3e50; /* Cambiamos el color de fondo de la barra de navegación */
+    background-image: url('../img//logo/banner_index.jpg');
+    background-size: cover; /* La imagen se ajustará para cubrir todo el contenedor */
+    background-position: center;/* Cambiamos el color de fondo de la barra de navegación */
     color: #000; /* Color del texto */
     padding: 10px 20px;
     font-family: 'Roboto', sans-serif; /* Formato de letra más llamativo */
@@ -17,24 +19,45 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* Color de fondo de la barra de navegación */
+  padding: 10px 20px; /* Espaciado interno */
+
   }
-  
+  .logo {
+    height: 100px; 
+    width: auto; /* Dejamos que el ancho se ajuste automáticamente */
+    margin-left: 20px; /* Añadimos un margen a la izquierda para separar el logo del resto de los elementos */
+  }
+
   .nav {
     display: flex;
     align-items: center;
+    
   }
   
   .nav-link {
+    font-size: 18px;
     text-decoration: none;
-    color: #fff;
-    margin-left: 20px;
-    transition: color 0.3s ease;
+    color: #ffffff;
+    margin: 10px 15px; /* Espaciado entre elementos de navegación */
+    padding: 10px 15px; /* Espaciado interno de cada enlace */
+    border-radius: 5px; /* Borde redondeado */
+    background-color:#181d25;/* Color de fondo de cada enlace */
+    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+  }
+  .u-nav:hover {
+    color: #000000;
+    border-bottom: 2px solid #000000; /* Añadimos un borde inferior al pasar el mouse */
+  }
+  .nav-link:hover {
+    background-color: #0281ff; /* Cambio de color de fondo al pasar el mouse */
   }
   
-  .u-nav:hover {
-    color: #ccc;
-    border-bottom: 2px solid #ccc; /* Añadimos un borde inferior al pasar el mouse */
+  .nav-right {
+    margin-left: 0px; /* Mover los elementos de la derecha hacia la derecha */
+    
   }
+  
   .cerrar:hover{
     color: red;
     border-bottom: 2px solid red;
@@ -50,6 +73,8 @@ body {
   /* Estilos específicos de la sección home */
   #home {
     padding: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
   
   .game-preview {
@@ -78,12 +103,13 @@ body {
   }
   
   .game-preview p {
-    color: #666;
+    color: #4d4d4d;
     margin-left: 10px;
+    margin-right: 17px;
   }
   
   .game-preview:hover {
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
   }
   
   /* Estilos específicos de la sección blogs */
@@ -98,6 +124,7 @@ body {
   
   p {
     color: #666;
+    
   }
   
   /* Estilos específicos de las otras secciones */
@@ -109,12 +136,6 @@ body {
     margin-bottom: 20px;
   }
   
-  .logo {
-    height: 80px; 
-    width: auto; /* Dejamos que el ancho se ajuste automáticamente */
-    margin-left: 20px; /* Añadimos un margen a la izquierda para separar el logo del resto de los elementos */
-  }
-  
   .separator {
     margin: 30px 0px; /* Espaciado arriba y abajo de la línea */
     border: none; /* Eliminamos el borde por defecto */
@@ -124,6 +145,8 @@ body {
   /* Estilos específicos para la sección de galería */
   #gallery {
     padding: 50px;
+    padding-top: 30px;
+    padding-bottom: 0%;
     
   }
   #gallery img.imagen1,
@@ -145,10 +168,12 @@ body {
       cursor: pointer; /* Cambia el cursor a un puntero al hacer hover */
       opacity: 0.8; /* Reduce la opacidad de la imagen */
       border-color: #ccc; /* Cambia el color del borde al hacer hover */
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Agrega una sombra al hacer hover */
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Agrega una sombra al hacer hover */
   }
 
   .gallery-container {
+    width: 50%; /* Ocupa la mitad del espacio horizontal */
+    margin: 0 auto; /* Centra horizontalmente el elemento */
     overflow: auto;
     white-space: nowrap;
     display: flex; 
@@ -161,19 +186,20 @@ body {
     transition: box-shadow 0.3s ease;
 }
 .gallery-container:hover{
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
 }
 .uno,
 .dos,
 .tres,
 .cuatro{
-    padding-top: 20px;
+  padding-top: 20px;
   padding-bottom: 20px;
 }
   /* Estilos para los botones de navegación */
   .navigation {
-    margin-top: 40px;
+    margin-top: 15px;
     text-align: center;
+
   }
   
   #prevBtn,
@@ -186,7 +212,7 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
     font-size: 16px;
-    margin: 0 10px;
+    margin: 10px;
     border-radius: 5px;
   }
   
@@ -195,6 +221,104 @@ body {
     background-color: #1977dd;
     transform: translateY(-2px);
   }
+  
+  /* Estilos específicos para las secciones "Sobre Nosotros" y "Contacto" */
+  #about{
+    padding-bottom: 5px;
+    padding-top: 10px;
+  }
+
+  #contact{
+    padding-top: 25px;
+  }
+  #about h2,
+  #contact h2 {
+      
+      color: #000; /* Color del texto del título */
+  }
+  
+  #about p,
+  #contact p {
+      color: #000000; /* Color del texto del párrafo */
+      
+      margin-bottom: 20px;
+  }
+  
+  /* Estilos para el desplegable "Sobre Nosotros" */
+  #about details {
+      margin-top: 20px;
+  }
+  
+  #about details summary {
+      cursor: pointer;
+      background-color: #ddd; /* Color de fondo para el resumen */
+      padding: 10px 15px; /* Espaciado interno */
+      border-radius: 5px; /* Borde redondeado */
+  }
+  
+  #about details summary:hover,
+  #contact details summary:hover {
+      background-color: #ccc; /* Cambio de color de fondo al pasar el mouse */
+  }
+  
+  #about details p {
+      margin-top: 10px;
+  }
+  /* Footer */
+  #footer {
+    padding-top: 10px;
+    
+    margin: 0;
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: space-between;
+    
+    border-top: 1px solid #ccc;
+}
+.footer-content{
+  padding-right: 530px;
+}
+.footer-content,
+.footer-social {
+    flex: 1;
+}
+
+.footer-social ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-social ul li {
+    display: inline;
+    margin-right: 30px;
+    
+}
+
+.footer-social ul li:last-child {
+    margin-right: 0;
+}
+ul{
+  list-style-type: none;
+  padding-left: 0%;
+  
+}
+li{
+  
+  margin-bottom: 10px;
+}
+.footer-social ul li a {
+    text-decoration: none;
+    color: #171717;
+    
+}
+
+.footer-social ul li a:hover {
+    color: #363636;
+}
+.footer-social img {
+  width: 40px; /* Tamaño deseado para la imagen */
+  margin-top: 5px; /* Espacio superior para separar la imagen del enlace */
+}
   
   
   
