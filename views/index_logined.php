@@ -42,13 +42,13 @@ if (isset($_SESSION['userId'])){
         <h2>Galería de fotos</h2>
         <hr class="separator">
         <div class="gallery-container">
-            <a class="uno" href="#img1"><img src="../img/Posts/imagen1.jpg" alt="Preview del juego 1"
+            <a class="uno" href="#"><img src="../img/Posts/imagen1.jpg" alt="Preview del juego 1"
                                              class="gallery-image imagen1"></a>
-            <a class="dos" href="#img2"><img src="../img/Posts/imagen2.jpg" alt="Preview del juego 2"
+            <a class="dos" href="#"><img src="../img/Posts/imagen2.jpg" alt="Preview del juego 2"
                                              class="gallery-image imagen2"></a>
-            <a class="tres" href="#img3"><img src="../img/Posts/imagen3.jpg" alt="Preview del juego 3"
+            <a class="tres" href="#"><img src="../img/Posts/imagen3.jpg" alt="Preview del juego 3"
                                               class="gallery-image imagen3"></a>
-            <a class="cuatro" href="#img4"><img src="../img/Posts/imagen4.jpg" alt="Preview del juego 4"
+            <a class="cuatro" href="#"><img src="../img/Posts/imagen4.jpg" alt="Preview del juego 4"
                                                 class="gallery-image imagen4"></a>
         </div>
         <div class="navigation">
