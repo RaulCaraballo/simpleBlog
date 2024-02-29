@@ -59,7 +59,7 @@ class OperationsController
                 echo '<p>' . $row["created_at"] . '</p>';
 
                 // Button to toggle full description visibility
-                echo '<button class="toggle-description-btn">Show Full Description</button>';
+                echo '<button class="toggle-description-btn">Mostrar descripción completa</button>';
 
                 // Check if the logged-in user is the author of the post
                 if ($username === $row["author"]) {

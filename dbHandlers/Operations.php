@@ -41,19 +41,19 @@ class Operations
     public function fillBlogTable()
     {
         $sql = "
-            INSERT INTO blog_posts (img, title, content, author, created_at) value ('imagen1.jpg', 'The Last Of Us Parte ||','Descripción breve del juego 1...', 'sesus', '2024-02-27 22:46:56' );
+            INSERT INTO blog_posts (img, title, content, author, created_at) value ('imagen1.jpg', 'The Last Of Us Parte ||','Ambientado cinco años después de The Last of Us (2013), el juego se centra en dos personajes jugables en un Estados Unidos post-apocalíptico cuyas vidas se entrelazan: Ellie, que busca venganza después de sufrir una tragedia, y Abby, una soldado que se ve envuelta en un conflicto entre su milicia y un culto religioso ...', 'sesus', '2024-02-27 22:46:56' );
         ;";
         mysqli_query($this->connection, $sql);
         $sql = "
-            INSERT INTO blog_posts (img, title, content, author, created_at) value ('imagen2.jpg', 'Spider-Man 2','Descripción breve del juego 2...', 'sesus', '2024-02-27 22:46:56' );
+            INSERT INTO blog_posts (img, title, content, author, created_at) value ('imagen2.jpg', 'Spider-Man 2','Marvel's Spider-Man 2 es un juego para un jugador. Sin embargo, podrás jugar tanto con Peter Parker como con Miles Morales. Cambia entre los heroicos hombres araña para luchar contra el crimen y descubre las habilidades y los elementos argumentales que los hacen únicos...', 'sesus', '2024-02-27 22:46:56' );
         ;";
         mysqli_query($this->connection, $sql);
         $sql = "
-            INSERT INTO blog_posts (img, title, content, author, created_at) value ('imagen3.jpg', 'Hogwarts Legacy','Descripción breve del juego 3...', 'sesus', '2024-02-27 22:46:56' );
+            INSERT INTO blog_posts (img, title, content, author, created_at) value ('imagen3.jpg', 'Hogwarts Legacy','Hogwarts Legacy es un juego de rol inmersivo en mundo abierto que se inspira de los libros de la saga Harry Potter. Disfruta del Hogwarts del siglo XIX. Tu personaje es un alumno o alumna del famoso colegio que tiene la clave de un antiguo secreto que amenaza con destruir el mundo mágico.', 'sesus', '2024-02-27 22:46:56' );
         ;";
         mysqli_query($this->connection, $sql);
         $sql = "
-            INSERT INTO blog_posts (img, title, content, author, created_at) value ('imagen4.jpg', 'Outer Wilds','Descripción breve del juego 4...', 'sesus', '2024-02-27 22:46:56' );
+            INSERT INTO blog_posts (img, title, content, author, created_at) value ('imagen4.jpg', 'Outer Wilds','Outer Wilds es una aventura de misterio en un mundo abierto acerca de un sistema solar atrapado en un bucle temporal infinito. ¡Te damos la bienvenida al programa espacial! Eres el nuevo recluta de Outer Wilds Ventures, un nuevo programa espacial que busca respuestas en un extraño sistema solar en constante evolución.', 'sesus', '2024-02-27 22:46:56' );
         ;";
         mysqli_query($this->connection, $sql);
     }

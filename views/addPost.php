@@ -16,17 +16,20 @@ $user_id = $_SESSION["userId"];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Blog Post</title>
+    <link rel="stylesheet" href="../style/addPostStyle.css">
 </head>
 <body>
-<h1>Add Blog Post</h1>
+
 <form action="../controllers/addPostController.php" method="post" enctype="multipart/form-data">
-    <label for="title">Title:</label><br>
+    <h1>Añade tu post</h1>
+    <hr class="separator">
+    <label for="title">Título:</label><br>
     <input type="text" id="title" name="title"><br>
-    <label for="content">Content:</label><br>
+    <label for="content">Contenido:</label><br>
     <textarea id="content" name="content" rows="5"></textarea><br>
-    <label for="image">Upload Image:</label><br>
+    <label for="image">Sube una imagen:</label><br>
     <input type="file" id="image" name="image"><br> <!-- Input for image upload -->
-    <input type="submit" value="Submit">
+    <input type="submit" value="Enviar">
 </form>
 
 </body>

@@ -24,8 +24,8 @@ if (isset($_SESSION['userId'])){
             <a href="#home"><img src="../img/logo/logo.png" class="logo" alt="Logo"></a>
         </div>
         <div class="nav right">
-            <a href="#home" class="nav-link active"><span class="nav-link-span"><span
-                            class="u-nav">Home</span></span></a>
+            <a href="#gallery" class="nav-link active"><span class="nav-link-span"><span
+                            class="u-nav">Galería de fotos</span></span></a>
             <a href="#about" class="nav-link"><span class="nav-link-span"><span
                             class="u-nav">Sobre nosotros</span></span></a>
             <a href="#contact" class="nav-link"><span class="nav-link-span"><span
@@ -94,13 +94,36 @@ if (isset($_SESSION['userId'])){
         ?>
     </section>
     <section id="about">
-        <h2>Sobre Nosotros</h2>
-        <p>Somos un equipo apasionado por los videojuegos...</p>
-    </section>
-    <section id="contact">
-        <h2>Contacto</h2>
-        <p>Ponte en contacto con nosotros...</p>
-    </section>
+            <h2>Sobre Nosotros</h2>
+            <hr class="separator">
+            <p>Somos un equipo de entusiastas de los videojuegos, dedicados a explorar y compartir las maravillas del mundo del gaming.</p>
+            <details>
+                <summary>Ver más</summary>
+                <p>Nuestra pasión nos impulsa a investigar, analizar y disfrutar de los últimos lanzamientos, clásicos atemporales y todo lo relacionado con la industria del entretenimiento interactivo.</p>
+                <p>Descubre más sobre nuestro equipo, nuestras experiencias y lo que nos motiva a seguir adelante en esta emocionante aventura de los videojuegos.</p>
+            </details>
+        </section>
+        <section id="contact">
+            <h2>Contacto</h2> 
+            <footer id="footer">
+                <div class="footer-content">
+                    <p class="p1">Contáctanos:</p>
+                    <ul>
+                        <li>Email: <a href="#">simpleBlog@gmail.com</a></li>
+                        <li>Teléfono: +34 724685432</li>
+                        <li>Dirección: Calle Principal 123, Collado Villalba, Madrid</li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <p class="p1">Síguenos en:</p>
+                    <ul>
+                        <li><a href="#"><img src="../img/logo/facebook.png" alt=""></a></li>
+                        <li><a href="#"><img src="../img/logo/twitter.png" alt=""></a></li>
+                        <li><a href="#"><img src="../img/logo/insta.png" alt=""></a></li>
+                    </ul>
+                </div>
+            </footer>
+        </section>
 </main>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
