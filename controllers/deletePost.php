@@ -1,4 +1,4 @@
-// deletePost.php
+
 
 <?php
 session_start();
