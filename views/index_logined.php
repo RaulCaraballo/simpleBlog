@@ -38,7 +38,7 @@ if (!isset($_SESSION['tableFulfill']) || $_SESSION['tableFulfill'] === false) {
     } catch (Exception $e) {
         // Handle exceptions, such as redirecting to an error page
         //header('Location:index_Error_Page.html');
-        echo $e->getMessage();
+        //echo $e->getMessage();
     }
 }
 

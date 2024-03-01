@@ -58,8 +58,8 @@ class OperationsController
                 // Display full description with animation, initially hidden
                 echo '<p class="full-description" style="display:none;">' . $row["content"] . '</p>';
 
-                echo '<p>' . $row["author"] . '</p>';
-                echo '<p>' . $row["created_at"] . '</p>';
+                echo '<p> Autor: ' . $row["author"] . '</p>';
+                echo '<p> Fecha de publicacion: ' . $row["created_at"] . '</p>';
 
                 // Button to toggle full description visibility
                 echo '<button class="toggle-description-btn">Mostrar descripción completa</button>';
