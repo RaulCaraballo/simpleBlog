@@ -55,11 +55,11 @@ try {
                             }
                             header('Location: ../views/index_logined.php');
                         } else {
-                            header('Location:index_Error_Page.html');
+                            //header('Location:index_Error_Page.html');
                             echo "Sorry, there was an error uploading your file.";
                         }
                     } else {
-                        header('Location:index_Error_Page.html');
+                        //header('Location:index_Error_Page.html');
                         echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
                     }
                 } else {

@@ -31,8 +31,8 @@ if (isset($_SESSION['userId'])) {
             exit();
         }
     } catch (Exception $e) {
-        header('Location:index_Error_Page.html');
-        //echo 'Error: ' . $e->getMessage();
+        //header('Location:index_Error_Page.html');
+        echo 'Error: ' . $e->getMessage();
     }
 }
 ?>

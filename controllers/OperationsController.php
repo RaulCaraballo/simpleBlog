@@ -20,6 +20,10 @@ class OperationsController
 
         return $this->tableOperations->checkUser($email, $username);
     }
+    public function createBlogTable()
+    {
+        $this->tableOperations->createBlogTable();
+    }
 
     public function addPost($fileName, $title, $content, $username)
     {
@@ -35,7 +39,6 @@ class OperationsController
 
     public  function getPost($username)
     {
-        $this->tableOperations->createBlogTable();
         $result = $this->tableOperations->getPost();
 
         if ($result && mysqli_num_rows($result) > 0) {

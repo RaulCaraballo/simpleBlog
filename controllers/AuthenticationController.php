@@ -32,7 +32,8 @@ try {
                             // User found, proceed with login
                             $userData = $tableController->selectUser($userEmail, $userPassword); // return user id as expected
                             if (!$userData){
-                                echo "usuario no encontrado";
+                                $_SESSION['userFound'] = false;
+                                header('Location: ../views/login.php');
                                 exit();
                             }
                             $_SESSION['userId'] = $userData['username'];

@@ -1,10 +1,47 @@
 <?php
 session_start();
-if (isset($_SESSION['userId'])){
+
+// Check if the user is logged in
+if (isset($_SESSION['userId'])) {
     $username = $_SESSION['userId'];
-}else{
+} else {
     $username = null;
 }
+
+// Check if the flag indicating if fillBlogTable() has been run is not set
+if (!isset($_SESSION['tableFulfill']) || $_SESSION['tableFulfill'] === false) {
+    // Set up the database connection
+    require_once("../controllers/OperationsController.php");
+    require_once("../dbHandlers/dataBase.php");
+
+    // Database connection settings
+    $settings = parse_ini_file('../settings/settings.ini');
+    $server = $settings['server'];
+    $dbUsername = $settings['username'];
+    $dbPassword = $settings['password'];
+    $dbName = $settings['database'];
+
+    try {
+        // Create a new database connection
+        $database = new dataBase($server, $dbUsername, $dbPassword, $dbName);
+        $connection = $database->getConnection();
+
+        // Create an instance of OperationsController
+        $operationsController = new OperationsController($connection);
+
+        $operationsController->createBlogTable();
+        // Run fillBlogTable() to fill the blog table
+        $operationsController->fillBlogTable();
+
+        // Set the flag to indicate that fillBlogTable() has been run
+        $_SESSION['tableFulfill'] = true;
+    } catch (Exception $e) {
+        // Handle exceptions, such as redirecting to an error page
+        //header('Location:index_Error_Page.html');
+        echo $e->getMessage();
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,9 +103,17 @@ if (isset($_SESSION['userId'])){
         <h2>Últimos Juegos</h2>
         <hr class="separator">
         <?php
+        try {
+            require_once("../dbHandlers/dataBase.php");
+        } catch (Exception $e) {
+            echo 'Error message';
+        }
 
-        require_once("../controllers/OperationsController.php");
-        require_once("../dbHandlers/dataBase.php");
+        try {
+            require_once("../controllers/OperationsController.php");
+        } catch (Exception $e) {
+            echo 'Error operationController not found';
+        }
 
         // Database connection settings
         $settings = parse_ini_file('../settings/settings.ini');
@@ -84,14 +129,13 @@ if (isset($_SESSION['userId'])){
 
             // Create an instance of OperationsController
             $operationsController = new OperationsController($connection);
-
             // Get posts
             $operationsController->getPost($username);
             // Set the flag indicating default records have been inserted
             $_SESSION['default_records_inserted'] = true;
         } catch (Exception $e) {
-            header('Location:index_Error_Page.html');
-            //echo 'Error: ' . $e->getMessage();
+            //header('Location:index_Error_Page.html');
+            echo 'Error: ' . $e->getMessage();
         }
         ?>
     </section>
@@ -102,7 +146,8 @@ if (isset($_SESSION['userId'])){
             <details>
                 <summary>Ver más</summary>
                 <p>Nuestra pasión nos impulsa a investigar, analizar y disfrutar de los últimos lanzamientos, clásicos atemporales y todo lo relacionado con la industria del entretenimiento interactivo.</p>
-                <p>Descubre más sobre nuestro equipo, nuestras experiencias y lo que nos motiva a seguir adelante en esta emocionante aventura de los videojuegos.</p>
+                <p>Descubre más sobre nuestro equipo, nuestras
+                    experiencias y lo que nos motiva a seguir adelante en esta emocionante aventura de los videojuegos.</p>
             </details>
         </section>
         <section id="contact">
