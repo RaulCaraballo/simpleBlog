@@ -69,7 +69,7 @@ class OperationsController
                     // Display delete button
                     echo '<form action="../controllers/deletePost.php" method="post">';
                     echo '<input type="hidden" name="postId" value="' . $row["id"] . '">';
-                    echo '<button type="submit" name="deleteBtn">Delete</button>';
+                    echo '<button type="submit" name="deleteBtn" class="delete-btn">Delete</button>';
                     echo '</form>';
                 }
                 echo '</div>';

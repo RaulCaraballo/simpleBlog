@@ -1,0 +1,59 @@
+.toggle-description-btn,
+.delete-btn{
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 16px;
+    margin: 10px;
+    border-radius: 5px;
+  }
+  
+ .toggle-description-btn,
+ .delete-btn {
+    background-color: #1977dd;
+    transform: translateY(-2px);
+  }
+
+  #home {
+    padding: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  .game-preview {
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 7px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .imagen1,
+  .imagen2,
+  .imagen3,
+  .imagen4{
+    margin-top: 7px;
+    margin-left: 10px;
+    width: 150px; /* Ajustamos el ancho al 100% */
+    height: auto; /* Permitimos que la altura se ajuste automáticamente */
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .game-preview h3 {
+    margin: 10px 0;
+    margin-left: 10px;
+    font-size: 1.2rem;
+  }
+  
+  .game-preview p {
+    color: #4d4d4d;
+    margin-left: 10px;
+    margin-right: 17px;
+  }
+  
+  .game-preview:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+  }
